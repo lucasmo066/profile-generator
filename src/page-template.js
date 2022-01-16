@@ -1,7 +1,7 @@
 //creates manager cards
 managerCard=(manager)=>{
     return `
-                <div class="cell large-10 large-offset-1">
+                <div class="cell large-11 large-offset-1">
                     <div class="card">
                         <div class="card-section text-center cardHeader">
                             <h2>${manager.Name}<br><i class="fas fa-clipboard-list"></i>${manager.getRole()}</h2>                        
@@ -19,7 +19,7 @@ managerCard=(manager)=>{
 //creates engineer cards
 engineerCard=(engineer)=>{
     return `
-                <div class="cell large-3">
+                <div class="cell large-5">
                     <div class="card">
                         <div class="card-section text-center cardHeader">
                             <h2>${engineer.Name}<br><i class="fas fa-cogs"></i>${engineer.getRole()}</h2>                           
@@ -35,9 +35,9 @@ engineerCard=(engineer)=>{
 }
 
 //creates intern cards
-internCard=(intern)=>{
+internCard=(intern) => {
     return `
-                <div class="cell large-3">
+                <div class="cell large-5">
                     <div class="card">
                         <div class="card-section text-center cardHeader">
                             <h2>${intern.Name}<br><i class="fas fa-graduation-cap"></i>${intern.getRole()}</h2>
