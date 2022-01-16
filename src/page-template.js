@@ -53,14 +53,12 @@ internCard=(intern) => {
     `
 }
 
-//
+
 organizeTeam = (employeeArr)=>{
-    //filters into three arrays based off manager, intern, or engineer
     let managerArr = employeeArr.filter(employee=>employee.getRole() === 'Manager')
     let engineerArr = employeeArr.filter(employee=>employee.getRole()==='Engineer');
     let internArr = employeeArr.filter(employee=>employee.getRole()==='Intern');
 
-    //joins arrs so in order of manager, engineer, intern
     const sortedArr = managerArr.concat(engineerArr, internArr)
 
 
@@ -96,7 +94,7 @@ organizeTeam = (employeeArr)=>{
     return generateTeam
 }    
 
-generateHtml =(cards)=>{
+generateHtml = (cards) => {
     return`
 <!doctype html>
 <html lang="en">
