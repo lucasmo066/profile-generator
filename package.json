@@ -1,0 +1,25 @@
+{
+  "name": "profile-generator",
+  "version": "1.0.0",
+  "description": "A profile generator for a company",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucasmo066/profile-generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucasmo066/profile-generator/issues"
+  },
+  "homepage": "https://github.com/lucasmo066/profile-generator#readme",
+  "devDependencies": {
+    "jest": "^27.4.7"
+  }
+}
