@@ -20,12 +20,12 @@ const promptUser=(employeeData)=>{
         {
             type: 'input',
             name:'name',
-            message:"Please enter the employee's name.",
-            validate: nameInput=>{
+            message:"What is the employee's name?",
+            validate: nameInput => {
                 if(nameInput){
                     return true;
                 } else{
-                    console.log("A name is required to continue!");
+                    console.log("Must enter a name!");
                     return false;
                 }
             }
@@ -34,8 +34,8 @@ const promptUser=(employeeData)=>{
         {
             type:'input',
             name:'ID',
-            message:"Please enter the employee's ID number.",
-            validate: IDInput=>{
+            message:"What is the employee's ID?",
+            validate: IDInput => {
                 if(isNaN(IDInput)){
                     return "Please enter a number";
                 }
@@ -46,12 +46,12 @@ const promptUser=(employeeData)=>{
         {
             type:'input',
             name:'email',
-            message:"Please enter the employee's email address.",
-            validate: emailInput=>{
+            message:"What is the employee's company email?",
+            validate: emailInput => {
                 if(emailInput){
                     return true;
                 } else{
-                    console.log("The employee's email is required to continue!");
+                    console.log("Please enter an email address!");
                     return false;
                 }
             }
@@ -60,10 +60,10 @@ const promptUser=(employeeData)=>{
         {
             type: 'list',
             name: 'employeeType',
-            message: 'Please select the role of the Employee.',
+            message: "What is the employee's new role",
             choices: ['Engineer', 'Intern', 'Manager'],
             default:['Manager'],
-            validate: employeeInput=>{
+            validate: employeeInput => {
                 if(employeeInput){
                     return true;
                 } else {
@@ -77,14 +77,14 @@ const promptUser=(employeeData)=>{
            type:'input',
            name:'managerInput',
            message:'Please enter the office number for the Manager.',
-            when:({employeeType})=>{
+            when:({employeeType}) => {
                 if(employeeType === 'Manager'){
                     return true;
                 } else{
                     return false
                 }
             },
-            validate: managerInput=>{
+            validate: managerInput => {
                 if(isNaN(managerInput)){
                     return "Please enter a number";
                 }
@@ -96,15 +96,15 @@ const promptUser=(employeeData)=>{
         {
             type: 'input',
             name: 'engineerInput',
-            message: "Please enter the engineer's GitHub username",
-            when:({employeeType})=>{
+            message: "What is the Engineer's GitHub username?",
+            when:({employeeType}) => {
                 if(employeeType === 'Engineer'){
                     return true;
                 } else{
                     return false;
                 }
             },
-            validate: engineerInput=>{
+            validate: engineerInput => {
                 if(engineerInput){
                     return true;
                 } else{
@@ -117,7 +117,7 @@ const promptUser=(employeeData)=>{
         {
             type:'input',
             name:'internInput',
-            message:"Please enter the school the intern attends",
+            message:"What school does the intern attend?",
             when:({employeeType})=>{
                 if(employeeType === 'Intern'){
                     return true;
@@ -125,7 +125,7 @@ const promptUser=(employeeData)=>{
                     return false;
                 }
             },
-            validate: internInput=>{
+            validate: internInput => {
                 if(internInput){
                     return true;
                 }else{
@@ -145,7 +145,7 @@ const promptUser=(employeeData)=>{
     ])
 
     //creates new object using classes based on type designation
-    .then(employeeData =>{
+    .then(employeeData => {
         let {name, ID, email, employeeType, managerInput, engineerInput, internInput, confirmAddEmployee} = employeeData;
         let employee;
 
@@ -170,12 +170,12 @@ const promptUser=(employeeData)=>{
 }
 
 promptUser()
-    .then(team=>{
+    .then(team => {
         return pageTemplate(team);
     })
-    .then(pageHTML =>{
+    .then(pageHTML => {
         return writeFile(pageHTML)
     })
-    .catch(err =>{
+    .catch(err => {
         console.log(err)
     })
